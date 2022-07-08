@@ -1,7 +1,8 @@
 import React from "react";
+import SolarSystem from "./SolarSytem2D";
 
 const index = () => {
-  return <h1>Hello world</h1>;
+  return <SolarSystem />;
 };
 
 export default index;
