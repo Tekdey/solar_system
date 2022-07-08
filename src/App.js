@@ -1,10 +1,17 @@
+import React, { useState, useEffect } from "react";
 import Home from "./components/home/index";
 import { Routes, Route } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Stars } from "@react-three/drei";
+import Navbar from "./components/home/Navbar";
+import { NavbarContext } from "./context/NavbarContext";
 
 function App() {
+  const [currentPlanet, setCurrentPlanet] = useState(null);
+
+  const propObj = { setCurrentPlanet, currentPlanet };
+
   return (
     <>
       <Canvas>
@@ -20,9 +27,12 @@ function App() {
         </Suspense>
       </Canvas>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <NavbarContext.Provider value={propObj}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </NavbarContext.Provider>
     </>
   );
 }
