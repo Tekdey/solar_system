@@ -1,0 +1,50 @@
+.menu-planet {
+  color: #f3f3f3;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, 0);
+
+  animation: loadNavbar 1s ease-in-out forwards;
+
+  ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      border: 3px solid #5e5e5e;
+      background: #b8b8b825;
+    }
+    li {
+        list-style-type: none;
+        height: 100%;
+        padding: 10px;
+
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          background: #f3f3f3;
+          color: #000000;
+          cursor: pointer;
+          transition: all .4s;
+        }
+    }
+}
+
+@keyframes loadNavbar {
+  to {
+    transform: translate(-50%, 0);
+  }
+  from {
+    transform: translate(-50%, 100%);
+  }
+}
